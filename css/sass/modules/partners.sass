@@ -1,0 +1,57 @@
+.partners
+    width: 100%
+    @media(max-width: 1199px)
+        width: 100%
+    h2 
+        font-size: 26px
+        font-weight: normal
+        @media(max-width: 1199px)
+            margin-bottom: 10px
+        @media(max-width: 767px)
+            font-size: 18px
+            margin: 0
+
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin: 0 -20px
+        align-items: center
+        justify-content: flex-start
+        @media(max-width: 1199px)
+            margin: 0 -10px
+        @media(max-width: 400px)
+            justify-content: center
+        & > a,
+        & > div 
+            margin: 20px
+            display: block
+            max-width: 300px
+            img 
+                max-width: 100%
+                display: block
+                max-height: 100px
+                filter: grayscale(100%)
+                opacity: .8
+                transition: all .2s
+            @media(max-width: 1199px)
+                margin: 10px 0
+                padding: 0 10px
+                width: 20%
+            @media(max-width: 400px)
+                width: 25%
+
+.partner
+    display: block
+    transition: all .2s ease-out
+    position: relative
+    &:hover
+        img 
+            filter: grayscale(0%)
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 100%
+            left: 0
+            height: 6px
+            width: 100%

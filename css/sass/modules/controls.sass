@@ -1,0 +1,213 @@
+.btn
+	height: 60px
+	line-height: 60px
+	display: inline-block  
+	border-radius: 60px
+	color: #fff
+	text-transform: uppercase
+	border: none
+	font-size: 14px
+	font-weight: 700
+	padding: 0 30px
+	min-width: 135px
+	cursor: pointer
+	border: 2px solid transparent
+	position: relative
+	overflow: hidden
+
+	&:after
+		display: block
+		content: ''
+		position: absolute
+		width: 105%
+		height: 0
+		top: 50%
+		left: 50%
+		background: #fff
+		opacity: 0
+		transform: translateX(-50%) translateY(-50%) rotate(45deg)
+		transition: all .4s ease-out
+
+	span 
+		position: relative
+		z-index: 2
+
+	&:hover:after
+		height: 310%
+		opacity: 1
+
+	&-primary
+		background: $accent-primary
+		border-color: $accent-primary
+		&:hover
+			color: $accent-primary
+			border-color: #fff
+			svg 
+				path 
+					fill: $accent-primary !important
+	&-telegram
+		text-transform: none
+		i 
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+			width: 20px
+			height: 20px
+			position: relative
+			z-index: 2
+			svg 
+				display: block
+				width: 100%
+				height: 100%
+				path 
+					fill: #fff
+
+	&-warn 
+		background-color: $accent-secondary
+		border-color: $accent-secondary
+		&:hover
+			color: $accent-secondary
+
+	&-transparent
+		background-color: transparent 
+		border-color: #fff
+		&:hover
+			color: $accent-primary
+
+	@media( max-width: 1199px)
+		height: 50px
+		line-height: 50px
+		font-size: 12px
+		padding: 0 20px
+		min-width: 110px
+
+	@media( max-width: 767px)
+		height: 40px
+		line-height: 40px
+		font-size: 10px
+		padding: 0 15px
+		min-width: 90px
+
+	@media( max-width: 430px)
+		min-width: 0
+		font-size: 9px
+		height: 35px
+		line-height: 35px
+		border-width: 1px
+		padding: 0 12px
+
+
+
+
+.socials
+	ul
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		list-style: none 
+		margin: 0 -10px
+		
+		@media (max-width: 991px)
+			justify-content: center
+	
+	.social-item
+		width: 50px
+		height: 50px
+		padding: 8px
+		border-radius: 50%
+		border: 1px solid #fff
+		overflow: hidden
+		display: block
+		transition: all 0.3s ease
+		margin: 0 10px
+		transition: all .2s ease-out
+		
+		svg
+			display: block
+			width: 100%
+			height: 100%
+			
+			.st0
+				fill: #d4d3df
+				transition: all .2s ease-out
+
+		&:hover
+			box-shadow: 0px 7px 18px 0px rgba(38, 37, 94, 0.15)
+				
+		&.fb:hover
+			svg
+				.st0
+					fill: $facebook-color
+			
+		&.twtr:hover
+			svg
+				.st0
+					fill: $twitter-color
+			
+		&.tel:hover
+			svg
+				.st0
+					fill: $telegram-color
+
+
+	&--hor 
+		ul 
+			display: block
+		.social-item
+			display: block
+			margin: 10px auto
+
+
+.social-link
+	display: block
+	margin: 0 4px
+	cursor: pointer
+	transition: all .2s
+	&:before 
+		display: block
+		width: 16px
+		height: 16px
+		content: ''
+		background-repeat: no-repeat
+		background-size: 100% 100%
+	&--li
+		&:before
+			background-image: url('../images/linkedin-logo.svg')
+
+	&:hover
+		opacity: .6
+
+
+.tabs
+	list-style-type: none
+	display: flex
+	align-items: center
+	justify-content: center
+	li 
+		height: 60px
+		line-height: 60px
+		padding: 0 30px
+		background-color: #F8F8FA
+		color: $grey
+		transition: all .2s ease-out
+		cursor: pointer
+		box-shadow: rgba(38, 37, 94, 0.1) 0px 5px 10px 0px
+		min-width: 140px
+		text-align: center
+		&:first-child
+			border-top-left-radius: 40px
+			border-bottom-left-radius: 40px
+		&:last-child
+			border-top-right-radius: 40px
+			border-bottom-right-radius: 40px
+		&.current
+			background-color: $accent-secondary
+			color: #fff
+
+.tab-content
+	display: none
+	margin-left: -15px
+	margin-right: -15px
+	padding: 15px
+	&.current
+		display: block
