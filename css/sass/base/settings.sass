@@ -86,7 +86,6 @@ p
     height: 100%
     background-color: #fff
     z-index: 100
-    transition: 4s all 1s ease-out
     display: flex
     align-items: center
     justify-content: center
@@ -111,6 +110,7 @@ p
     &.closed
         opacity: 0
         visibility: hidden
+        transition: 4s all 1s ease-out
         pointer-events: none
         .loading__img
             opacity: 0
