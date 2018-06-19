@@ -1,0 +1,46 @@
+.footer
+    padding-top: 10vw
+    margin-top: 80px
+
+    background-image: url('../images/footer-bg.png')
+    background-size: auto 100%
+    background-repeat: no-repeat
+    background-position: left bottom
+    @media( min-width: 2000px)
+        padding-top: 12vw
+    @media(max-width: 1500px)
+        background-position: -20% 100%
+    @media(max-width: 1200px)
+        background-position: -80% 100%
+    @media(max-width: 840px)
+        background-position: 100% 100%
+        padding-top: 14vw
+        margin-top: 0
+    @media(max-width: 576px)
+        background-color: $accent-primary
+        padding-top: 40px
+        .row
+            justify-content: center
+    &__bottom
+        padding-bottom: 35px
+        padding-top: 6.5vw
+
+    .copy 
+        font-size: 12px
+        text-transform: uppercase
+        color: $grey
+        @media(max-width: 576px)
+            margin: 10px auto
+
+    .logo
+        @media(max-width: 576px)
+            display: block
+            margin: 10px auto
+            width: 120px
+
+    .mailchimp-form
+        margin-bottom: 0
+        @media(max-width: 576px)
+            display: block
+            width: 280px
+            margin: 10px auto

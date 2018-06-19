@@ -1,0 +1,104 @@
+.header
+	+position(absolute, 0, 0, auto, 0)
+	+transition(all, .4s)
+	
+	height: 110px
+	color: #FFF
+	@media(max-width: 1199px)
+		height: 80px
+	
+	.container-fluid
+		height: 100% 
+		padding: 0 40px 
+		@media(max-width: 1199px)
+			padding: 0 15px
+		.row
+			height: 100%
+
+	.btn
+		display: inline-block
+		vertical-align: middle
+
+.logo
+	width: 185px
+	display: block
+	img
+		display: block
+		width: 100%
+
+	@media(max-width: 1199px)
+		width: 140px
+	@media( max-width: 767px)
+		width: 100px
+	@media( max-width: 430px)
+		width: 60px
+			
+// .headroom--unpinned
+//     transform: translateY(-100%)
+// .headroom--pinned,
+// .headroom--bottom 
+// 	transform: translateY(0)
+
+/* ------------------------------------ */
+/*  NAV STYLES  */
+
+.page-menu
+	display: inline-block
+	vertical-align: middle
+	ul
+		list-style-type: none
+
+		li
+			display: inline-block
+			vertical-align: middle
+			margin: 0 20px
+			@media( max-width: 1199px)
+				margin: 0 10px
+			@media( max-width: 767px)
+				margin: 0 5px
+			a
+				color: #fff
+				text-transform: uppercase
+				font-size: 12px
+				text-transform: uppercase
+				position: relative
+				display: block
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					max-width: 0
+					transition: all .1s ease-out
+					height: 1px
+					background: #ffffff
+					position: absolute
+					left: 0
+					right: 0
+					margin: auto
+					bottom: -2px
+				&:hover
+					&:after
+						max-width: 100%
+				@media( max-width: 767px)
+					font-size: 10px
+
+	& + * 
+		margin-left: 30px
+		@media( max-width: 1199px)
+			margin-left: 15px
+		@media( max-width: 767px)
+			margin-left: 5px
+
+/* ------------------------------------ */
+/*  MENU BUTTON  */
+
+.menu-button
+	display: none
+	+position(fixed, 15px, 10px, auto, auto)
+	background: white
+	border-radius: 50%
+	box-shadow: 0 5px 10px rgba(black, 0.5)
+	cursor: pointer
+	transform: rotate(0deg)
+	transition: .5s ease-in-out
+	cursor: pointer

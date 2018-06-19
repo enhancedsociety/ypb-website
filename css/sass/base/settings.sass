@@ -1,0 +1,126 @@
+
+    
+// typography
+body 
+    font-size: 14px
+    color: $text
+    font-family: 'Proxima'
+    background-image: url('../images/body-lines-3.png')
+    background-repeat: no-repeat
+    background-position: top right
+    background-size: 68% auto
+    position: relative
+    .body-bg-0
+        content: ''
+        display: block
+        position: absolute
+        right: 0
+        top: 0
+        width: 55%
+        height: auto
+        padding-top: 50%
+        background-size:  auto 100%
+        background-repeat: repeat
+        z-index: 0
+        animation: rot 30s infinite linear
+        background-image: url('../images/body-bg-0.svg')
+        
+    .body-bg-1
+        content: ''
+        display: block
+        position: absolute
+        right: 0
+        top: 0
+        width: 47%
+        height: auto
+        padding-top: 51%
+        background-size: 100% 100%
+        background-repeat: no-repeat
+        background-image: url('../images/body-bg-1-2.png')
+        z-index: -1
+        @media(max-width: 576px)
+            width: 65%
+            padding-top: 80%
+    // .body-bg-2
+    //     content: ''
+    //     display: block
+    //     position: absolute
+    //     left: 0
+    //     bottom: 0
+    //     width: 40%
+    //     height: auto
+    //     padding-top: 20%
+    //     background-size: 75% auto, 100% auto
+    //     background-position: left top, 0 0
+    //     background-repeat: no-repeat, no-repeat
+    //     background-image: url('../images/body-bg-2.png'), url('../images/body-lines-2.png')
+    //     z-index: -1
+
+    // .body-bg-3
+    //     content: ''
+    //     display: block
+    //     position: absolute
+    //     right: 0
+    //     top: 1850px
+    //     width: 38.5%
+    //     height: auto
+    //     padding-top: 94.5%
+    //     background-size: 100% 100%
+    //     background-position: 0 0
+    //     background-repeat: no-repeat
+    //     background-image: url('../images/body-bg-3.png')
+
+p
+    line-height: 1.6 
+
+// other overall settings
++placeholder
+    opacity: 1
+
+
+.loading
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: #fff
+    z-index: 100
+    display: flex
+    align-items: center
+    justify-content: center
+    &__img 
+        transition: all 1s ease-out
+        opacity: 1
+        visibility: visible
+        img
+            display: block
+            animation: com-bounce 4s infinite 
+            margin: 0 auto
+        &:after
+            width: 80px
+            height: 30px
+            content: ''
+            display: block
+            box-shadow: 0 50px 24px rgba(0,0,0,0.08)
+            margin: 0 auto
+            border-radius: 50%
+            margin-top: -40px
+
+    &.closed
+        opacity: 0
+        visibility: hidden
+        transition: 4s all 1s ease-out
+        pointer-events: none
+        .loading__img
+            opacity: 0
+            visibility: hidden
+
+
+@keyframes com-bounce 
+	0%, 20%, 50%, 80%, 100%
+		transform: translateY(0)
+	40%
+		transform: translateY(-20px)
+	60%	
+		transform: translateY(-10px)

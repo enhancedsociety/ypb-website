@@ -1,0 +1,54 @@
+.faq
+    position: relative
+    & > div
+        position: static
+    .row > div 
+        position: static
+    &__item
+        padding: 20px 40px
+        cursor: pointer
+        transition: all .2s ease-out, background-color .4s
+
+        background-color: #fff
+        box-shadow: 0px 7px 18px 0px rgba(38, 37, 94, 0.15)
+        border-radius: 20px
+        margin: 8px auto
+        @media(max-width: 1199px)
+            padding: 15px 30px
+            box-shadow: 0px 5px 14px 0px rgba(38, 37, 94, 0.15)
+        @media(max-width: 991px)
+            padding: 15px 20px
+            min-height: 100px
+        @media(max-width: 767px)
+            position: relative
+            box-shadow: 0px 5px 10px 0px rgba(38, 37, 94, 0.15)
+
+        &:hover
+            box-shadow: 0px 14px 18px 0px rgba(38, 37, 94, 0.15)
+            @media(max-width: 1199px)
+                box-shadow: 0px 5px 14px 0px rgba(38, 37, 94, 0.15)
+            @media(max-width: 767px)
+                box-shadow: 0px 5px 10px 0px rgba(38, 37, 94, 0.15)
+            
+
+        &__title
+            font-size: 18px
+            font-weight: 700
+            transition: all .3s ease-out
+            min-height: 70px
+            display: flex
+            align-items: center
+            @media(max-width: 1199px)
+                font-size: 16px
+            @media(max-width: 991px)
+                font-size: 14px
+
+        &__text
+            padding-top: 20px
+            display: none
+
+        &.active
+            background-color: $accent-primary
+            z-index: 3
+            .faq__item__title
+                color: #fff
