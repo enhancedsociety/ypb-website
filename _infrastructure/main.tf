@@ -29,6 +29,13 @@ resource "aws_acm_certificate" "cert" {
   tags = "${local.common_tags}"
 }
 
+resource "aws_acm_certificate" "cert-www" {
+  domain_name = "ypb.ypbsystems.com"
+  subject_alternative_names = ["*.ypb.ypbsystems.com"]
+  validation_method = "EMAIL"
+  tags = "${local.common_tags}"
+}
+
 resource "aws_cloudfront_distribution" "ypb_distribution" {
   origin {
     domain_name = "ypb-orig.ypbsystems.com"
@@ -42,7 +49,7 @@ resource "aws_cloudfront_distribution" "ypb_distribution" {
     }
 
   }
-  aliases = ["ypb.ypbsystems.com"]
+  aliases = ["www.ypb.ypbsystems.com", "ypb.ypbsystems.com"]
   enabled = true
   tags = "${local.common_tags}"
 
@@ -80,7 +87,7 @@ resource "aws_cloudfront_distribution" "ypb_distribution" {
     }
   }
   viewer_certificate {
-    acm_certificate_arn = "${aws_acm_certificate.cert.arn}"
+    acm_certificate_arn = "${aws_acm_certificate.cert-www.arn}"
     ssl_support_method = "sni-only"
     minimum_protocol_version = "TLSv1.1_2016"
   }
